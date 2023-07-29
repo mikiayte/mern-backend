@@ -28,7 +28,7 @@ app.use('/api/users', userRoutes)
 //  else {
 
 //  }
-     app.get('/', (req, res) => res.send('server is ready'))
+     app.get('/', (req, res) => res.send('server is ready' + port))
 
 app.use(notFound)
 app.use(errorHandler)
