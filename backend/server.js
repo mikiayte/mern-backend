@@ -9,7 +9,7 @@ import connectDB from './config/db.js';
 connectDB()
 const app = express();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
@@ -26,10 +26,10 @@ app.use('/api/users', userRoutes)
 //  }
 
 //  else {
-//     app.get('/', (req, res) => res.send('server is ready'))
 
 //  }
- 
+     app.get('/', (req, res) => res.send('server is ready'))
+
 app.use(notFound)
 app.use(errorHandler)
 app.listen(port, () => console.log('listening on port', port))
